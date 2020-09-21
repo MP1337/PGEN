@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Exec=pgen
+Name=Simple Password Generator
+Icon=${SNAP}/meta/gui/pgen.png
