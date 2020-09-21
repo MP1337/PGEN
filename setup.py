@@ -16,6 +16,5 @@ setup(
     keywords='password generator',
     install_requires=['pyqt5'],
     packages = ["pgen_start"],
-    package_dir = {"pgen_source"},
     scripts = ["pgen_start"]
 )
