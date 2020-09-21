@@ -4,16 +4,14 @@
 # Contact: info@elix-it.de
 """Gnerator for strong passwords"""
 import sys
-import os
+
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt5.QtGui import QIntValidator, QPixmap
 import pgen
 
-DIR = os.getcwdb()
-print(DIR)
-GUI = DIR + '/data/gui.ui'
-ICON = DIR + '/data/pgen.png'
+GUI = 'data/gui.ui'
+ICON = 'data/pgen.png'
 
 class PGen(QMainWindow):
     """Qt GUI MainWindow class"""
