@@ -1,18 +1,19 @@
-#PGEN Simple Password Generator
-#Version: 1.0
-#Author: Peter Mazela
-#Contact: info@elix-it.de
-"""Generator for strong passwords"""
+# PGEN Simple Password Generator
+# Version: 1.0
+# Author: Peter Mazela
+# Contact: info@elix-it.de
+"""Gnerator for strong passwords"""
 import sys
 import os
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt5.QtGui import QIntValidator, QPixmap
-from src import pgen
+import pgen
 
-WORKING_DIR = os.getcwd() + '/'
-GUI = WORKING_DIR + 'src/data/gui.ui'
-ICON = WORKING_DIR + 'src/data/pgen.png'
+DIR = os.getcwdb()
+print(DIR)
+GUI = DIR + '/data/gui.ui'
+ICON = DIR + '/data/pgen.png'
 
 class PGen(QMainWindow):
     """Qt GUI MainWindow class"""
