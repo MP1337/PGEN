@@ -1,0 +1,19 @@
+name: pgen
+base: core18
+version: "1.0"
+summary: "Password Generator"
+description: "Simple strong password generator"
+confinement: devmode
+grade: stable
+
+apps:
+  pgen:
+    command:    pgen
+
+parts:
+  pgen:
+    after: [desktop-qt5]
+    plugin: python
+    python-version: python3
+    source: .
+    requirements: requirements.txt
