@@ -8,11 +8,11 @@ import os
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt5.QtGui import QIntValidator, QPixmap
-import pgen as pg
+from src import pgen
 
 WORKING_DIR = os.getcwd() + '/'
-GUI = WORKING_DIR + '/data/gui.ui'
-ICON = WORKING_DIR + '/data/pgen.png'
+GUI = WORKING_DIR + 'src/data/gui.ui'
+ICON = WORKING_DIR + 'src/data/pgen.png'
 
 class PGen(QMainWindow):
     """Qt GUI MainWindow class"""
@@ -59,7 +59,7 @@ class PGen(QMainWindow):
 
         for _i in range(17):
             self.listWidget.addItem(
-                pg.generate_password(password_length,letters,digits,special))
+                pgen.generate_password(password_length,letters,digits,special))
 
         color = "red" if password_length < 8 else "orange" if password_length < 10 else "lime"
         self.lineStrongness.setStyleSheet(f"background-color: {color};")
