@@ -10,10 +10,11 @@ import inspect
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt5.QtGui import QIntValidator, QPixmap
+
 DIR = os.path.dirname(inspect.getfile(inspect.currentframe()))
-sys.path.append(DIR)
 GUI = DIR + '/data/gui.ui'
 ICON = DIR + '/data/pgen.png'
+sys.path.append(DIR)
 
 class MainWindow(QMainWindow):
     """Qt GUI MainWindow class"""
