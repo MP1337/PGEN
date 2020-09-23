@@ -1,5 +1,8 @@
-itignore 
+.vscode/
+parts/
+prime/
 venv/
 __pycache__/
 build/
 dist/
+__pycache__
