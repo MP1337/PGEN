@@ -2,20 +2,19 @@
 # Version: 1.0
 # Author: Peter Mazela
 # Contact: info@elix-it.de
-"""Gnerator for strong passwords"""
+"""Genrator for strong passwords"""
 import sys
 import os
+import pgen
 import inspect
-DIR = os.path.dirname(inspect.getfile(inspect.currentframe()))
-sys.path.append(DIR)
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt5.QtGui import QIntValidator, QPixmap
-import pgen
-
+DIR = os.path.dirname(inspect.getfile(inspect.currentframe()))
+sys.path.append(DIR)
 GUI = DIR + '/data/gui.ui'
 ICON = DIR + '/data/pgen.png'
-print(GUI)
+
 class MainWindow(QMainWindow):
     """Qt GUI MainWindow class"""
     def __init__(self):
@@ -26,7 +25,7 @@ class MainWindow(QMainWindow):
         uic.loadUi(GUI, self)
 
         #Logo
-        pixmap = QPixmap(ICON).scaled(150,150)
+        pixmap = QPixmap(ICON).scaled(150, 150)
         self.logoLabel.setPixmap(pixmap)
 
         #Clipboard
@@ -40,11 +39,11 @@ class MainWindow(QMainWindow):
         self.actionClose.triggered.connect(self.close)
 
         #Integer Validation
-        self.validator = QIntValidator()
-        self.lenText.setValidator(self.validator)
-
+        validator = QIntValidator()
+        self.lenText.setValidator(validator)
         self.generate_password()
         self.lineStrongness.setText(self.listWidget.item(0).text())
+        self.show()
 
     def generate_password(self):
         """Generating passwords and filling listWidget"""
@@ -61,7 +60,7 @@ class MainWindow(QMainWindow):
 
         for _i in range(17):
             self.listWidget.addItem(
-                pgen.generate_password(password_length,letters,digits,special))
+                pgen.generate_password(password_length, letters, digits, special))
 
         color = "red" if password_length < 8 else "orange" if password_length < 10 else "lime"
         self.lineStrongness.setStyleSheet(f"background-color: {color};")
@@ -77,7 +76,7 @@ class MainWindow(QMainWindow):
 
     def button_about(self):
         """Show 'About' information window"""
-        self.QMessageBox.information(self, "Info",\
+        QMessageBox.information(self, "Info",\
         "PGEN Simple Password Generator v1\nCreated by Peter Mazela\ninfo@elix-it.de\n\
 https://github.com/MP1337/PGEN_Simple_Password_Generator")
 
@@ -90,7 +89,6 @@ def main():
     app = QApplication(sys.argv)
     app.setStyle('Fusion')
     ex = MainWindow()
-    ex.show()
     sys.exit(app.exec_())
 
 if __name__ == '__main__':
