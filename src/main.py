@@ -2,7 +2,7 @@
 # Version: 1.0
 # Author: Peter Mazela
 # Contact: info@elix-it.de
-"""Genrator for strong passwords"""
+"""Generator for strong passwords (Gui module)"""
 import sys
 import os
 import inspect
