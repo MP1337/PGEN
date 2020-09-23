@@ -5,11 +5,11 @@
 """Genrator for strong passwords"""
 import sys
 import os
-import pgen
 import inspect
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt5.QtGui import QIntValidator, QPixmap
+import pgen
 
 DIR = os.path.dirname(inspect.getfile(inspect.currentframe()))
 GUI = DIR + '/data/gui.ui'
@@ -90,6 +90,7 @@ def main():
     app = QApplication(sys.argv)
     app.setStyle('Fusion')
     ex = MainWindow()
+    ex.show()
     sys.exit(app.exec_())
 
 if __name__ == '__main__':
