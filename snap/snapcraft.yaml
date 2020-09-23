@@ -18,8 +18,8 @@ parts:
   desktop-gui:
     plugin: dump
     source: src/
-#    organize:
-#      "pgenstart": "bin/pgenstart"
+    organize:
+      "pgenstart": "bin/pgenstart"
 #      "pgen.png": "bin/pgen.png"
 #      "gui.ui": "bin/gui.ui"
 #      "data/pgen.desktop": /usr/share/applications/pgen.desktop

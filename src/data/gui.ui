@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PGENWindow</class>
- <widget class="QMainWindow" name="PGENWindow">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -41,11 +41,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>PGEN Simple Password Generator v1</string>
-  </property>
-  <property name="windowIcon">
-   <iconset theme="pgen.png">
-    <normaloff>.</normaloff>.</iconset>
+   <string>PGEN Simple Password Generator</string>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>

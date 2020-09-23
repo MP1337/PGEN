@@ -4,16 +4,19 @@
 # Contact: info@elix-it.de
 """Gnerator for strong passwords"""
 import sys
-
+import os
+import inspect
+DIR = os.path.dirname(inspect.getfile(inspect.currentframe()))
+sys.path.append(DIR)
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt5.QtGui import QIntValidator, QPixmap
 import pgen
 
-GUI = 'data/gui.ui'
-ICON = 'data/pgen.png'
-
-class PGen(QMainWindow):
+GUI = DIR + '/data/gui.ui'
+ICON = DIR + '/data/pgen.png'
+print(GUI)
+class MainWindow(QMainWindow):
     """Qt GUI MainWindow class"""
     def __init__(self):
         """Init UI, clipboard and genereate random
@@ -74,7 +77,7 @@ class PGen(QMainWindow):
 
     def button_about(self):
         """Show 'About' information window"""
-        QMessageBox.information(self, "Info",\
+        self.QMessageBox.information(self, "Info",\
         "PGEN Simple Password Generator v1\nCreated by Peter Mazela\ninfo@elix-it.de\n\
 https://github.com/MP1337/PGEN_Simple_Password_Generator")
 
@@ -86,7 +89,7 @@ def main():
     """No need to describe =)"""
     app = QApplication(sys.argv)
     app.setStyle('Fusion')
-    ex = PGen()
+    ex = MainWindow()
     ex.show()
     sys.exit(app.exec_())
 
