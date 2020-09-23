@@ -10,20 +10,15 @@ confinement: strict # use 'strict' once you have the right plugs and slots
 
 apps:
   pgen:
-    command: desktop-launch pgenstart
+    command: desktop-launch $SNAP/pgen_gui.py
+#    command: $SNAP/pgen_gui.py
     plugs: [desktop, desktop-legacy, x11, unity7, wayland, opengl]
-#    desktop: /usr/share/applications/pgen.desktop
+    extensions: [kde-neon]
 
 parts:
   desktop-gui:
     plugin: dump
     source: src/
-    organize:
-      "pgenstart": "bin/pgenstart"
-#      "pgen.png": "bin/pgen.png"
-#      "gui.ui": "bin/gui.ui"
-#      "data/pgen.desktop": /usr/share/applications/pgen.desktop
-#     "data/pgen.png": /usr/share/applications/pgen.png
 
     stage-packages:
     - libdouble-conversion1

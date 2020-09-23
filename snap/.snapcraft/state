@@ -1,4 +1,11 @@
 !GlobalState
 assets:
-  build-packages: []
+  build-packages:
+  - qtbase5-dev-tools=5.12.8+dfsg-0ubuntu1
+  - libvulkan-dev=1.2.131.2-1
+  - libqt5opengl5-dev=5.12.8+dfsg-0ubuntu1
+  - libqt5concurrent5=5.12.8+dfsg-0ubuntu1
+  - qt5-qmake=5.12.8+dfsg-0ubuntu1
+  - qtbase5-dev=5.12.8+dfsg-0ubuntu1
+  - qt5-qmake-bin=5.12.8+dfsg-0ubuntu1
   build-snaps: []
