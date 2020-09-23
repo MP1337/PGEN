@@ -59,7 +59,7 @@ class MainWindow(QMainWindow):
             password_length = 10
             self.lenText.setText(str(password_length))
 
-        for _i in range(17):
+        for _i in range(16):
             self.listWidget.addItem(
                 pgen.generate_password(password_length, letters, digits, special))
 
